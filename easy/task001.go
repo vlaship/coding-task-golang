@@ -1,4 +1,4 @@
-package solution
+package easy
 
 /*
 Given an array of integers sorted in non-decreasing order.
@@ -8,7 +8,7 @@ Example
 Input: [-4,-1,0,3,4,10]
 Output: [0,1,9,16,16,100]
 */
-func Task1(input []int) []int {
+func task001(input []int) []int {
 	var sorted = make([]int, len(input))
 
 	r := 0

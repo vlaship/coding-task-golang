@@ -1,13 +1,13 @@
-package solution
+package easy
 
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func TestTask4(t *testing.T) {
+func Test_reverseString(t *testing.T) {
 	expected := "!dlroW olleH"
-	result := Task4("Hello World!")
+	result := reverseString("Hello World!")
 	if !assert.Equal(t, result, expected) {
 		t.Errorf("Expected %v but got %v", expected, result)
 	}

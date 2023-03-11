@@ -1,7 +1,6 @@
-package solution
+package easy
 
-func Task4(input string) string {
-
+func reverseString(input string) string {
 	in := []rune(input)
 	l := len(in)
 	var res = []rune{}
