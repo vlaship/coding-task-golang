@@ -55,11 +55,6 @@ func Test_addTwoNumbers_4(t *testing.T) {
 	}
 }
 
-/*
-l1 = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
-l2 = [5,6,4]
-expected = [6,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
-*/
 func Test_addTwoNumbers_5(t *testing.T) {
 	l1 := &ListNode{Val: 1, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0,
 		Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0,

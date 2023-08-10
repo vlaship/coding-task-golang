@@ -36,25 +36,27 @@ It is guaranteed that the list represents a number that does not have leading ze
  * }
  */
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	r1 := getNum(l1.Next, uint64(l1.Val))
-	r2 := getNum(l2.Next, uint64(l2.Val))
+	res := &ListNode{}
+	current := res
+	carry := 0
 
-	return getListNode(r1 + r2)
-}
+	for l1 != nil || l2 != nil || carry != 0 {
+		sum := carry
+		if l1 != nil {
+			sum += l1.Val
+			l1 = l1.Next
+		}
+		if l2 != nil {
+			sum += l2.Val
+			l2 = l2.Next
+		}
 
-func getNum(l *ListNode, num uint64) uint64 {
-	if l == nil {
-		return num
+		current.Next = &ListNode{Val: sum % 10}
+		current = current.Next
+		carry = sum / 10
 	}
-	i := getNum(l.Next, uint64(l.Val))*uint64(10) + num
-	return i
-}
 
-func getListNode(num uint64) *ListNode {
-	if num < 10 {
-		return &ListNode{Val: int(num)}
-	}
-	return &ListNode{Val: int(num % 10), Next: getListNode(num / 10)}
+	return res.Next
 }
 
 type ListNode struct {
