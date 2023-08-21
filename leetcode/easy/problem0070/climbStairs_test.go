@@ -1,24 +1,21 @@
 package problem0070
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_climbStairs_1(t *testing.T) {
 	expected := 2
 	result := climbStairs(2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_climbStairs_2(t *testing.T) {
 	expected := 3
 	result := climbStairs(3)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", false, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 /*
@@ -34,15 +31,11 @@ Explanation: There are three ways to climb to the top.
 func Test_climbStairs_3(t *testing.T) {
 	expected := 5
 	result := climbStairs(4)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", false, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_climbStairs_4(t *testing.T) {
 	expected := 8
 	result := climbStairs(5)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", false, result)
-	}
+	require.Equal(t, expected, result)
 }

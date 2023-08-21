@@ -3,7 +3,7 @@ package problem0002
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_addTwoNumbers_1(t *testing.T) {
@@ -12,9 +12,7 @@ func Test_addTwoNumbers_1(t *testing.T) {
 	expected := &ListNode{Val: 7, Next: &ListNode{Val: 0, Next: &ListNode{Val: 8}}}
 
 	result := addTwoNumbers(l1, l2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_addTwoNumbers_2(t *testing.T) {
@@ -23,9 +21,7 @@ func Test_addTwoNumbers_2(t *testing.T) {
 	expected := &ListNode{Val: 0}
 
 	result := addTwoNumbers(l1, l2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_addTwoNumbers_3(t *testing.T) {
@@ -39,9 +35,7 @@ func Test_addTwoNumbers_3(t *testing.T) {
 			Next: &ListNode{Val: 0, Next: &ListNode{Val: 1}}}}}}}}
 
 	result := addTwoNumbers(l1, l2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_addTwoNumbers_4(t *testing.T) {
@@ -50,9 +44,7 @@ func Test_addTwoNumbers_4(t *testing.T) {
 	expected := &ListNode{Val: 7, Next: &ListNode{Val: 0, Next: &ListNode{Val: 4, Next: &ListNode{Val: 0, Next: &ListNode{Val: 1}}}}}
 
 	result := addTwoNumbers(l1, l2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_addTwoNumbers_5(t *testing.T) {
@@ -81,7 +73,5 @@ func Test_addTwoNumbers_5(t *testing.T) {
 										Next: &ListNode{Val: 0, Next: &ListNode{Val: 0, Next: &ListNode{Val: 0,
 											Next: &ListNode{Val: 1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 	result := addTwoNumbers(l1, l2)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }

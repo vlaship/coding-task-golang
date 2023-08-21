@@ -1,8 +1,9 @@
 package problem0366
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func Test_findLeaves_1(t *testing.T) {
@@ -13,7 +14,5 @@ func Test_findLeaves_1(t *testing.T) {
 	n2 := &TreeNode{val: 2, left: n4, right: n5}
 	n1 := &TreeNode{val: 1, left: n2, right: n3}
 	result := findLeaves(n1)
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }

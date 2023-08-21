@@ -3,7 +3,7 @@ package problem0054
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_spiralOrder_1(t *testing.T) {
@@ -14,10 +14,7 @@ func Test_spiralOrder_1(t *testing.T) {
 	}
 	expected := []int{1, 2, 3, 6, 9, 8, 7, 4, 5}
 	result := spiralOrder(matrix)
-
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
 
 func Test_spiralOrder_2(t *testing.T) {
@@ -28,8 +25,5 @@ func Test_spiralOrder_2(t *testing.T) {
 	}
 	expected := []int{1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7}
 	result := spiralOrder(matrix)
-
-	if !assert.Equal(t, expected, result) {
-		t.Errorf("Expected %v but got %v", true, result)
-	}
+	require.Equal(t, expected, result)
 }
