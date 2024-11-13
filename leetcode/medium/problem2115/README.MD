@@ -1,4 +1,4 @@
-**2115. Find All Possible Recipes from Given Supplies**
+# 2115. Find All Possible Recipes from Given Supplies
 
 https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/
 
@@ -35,10 +35,10 @@ We can create "sandwich" since we have the ingredient "meat" and can create the 
 We can create "burger" since we have the ingredient "meat" and can create the ingredients "bread" and "sandwich".
 
 **Constraints:**\
-    `n == recipes.length == ingredients.length
-    1 <= n <= 100
-    1 <= ingredients[i].length, supplies.length <= 100
-    1 <= recipes[i].length, ingredients[i][j].length, supplies[k].length <= 10
-    recipes[i], ingredients[i][j], and supplies[k] consist only of lowercase English letters.
-    All the values of recipes and supplies combined are unique.
-    Each ingredients[i] does not contain any duplicate values.`
+`n == recipes.length == ingredients.length`\
+`1 <= n <= 100`\
+`1 <= ingredients[i].length, supplies.length <= 100`\
+`1 <= recipes[i].length, ingredients[i][j].length, supplies[k].length <= 10`\
+`recipes[i], ingredients[i][j], and supplies[k] consist only of lowercase English letters.`\
+`All the values of recipes and supplies combined are unique.`\
+`Each ingredients[i] does not contain any duplicate values.`
