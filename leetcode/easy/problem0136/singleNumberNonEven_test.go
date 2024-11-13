@@ -6,26 +6,22 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_singleNumberNonOnlyEven_1(t *testing.T) {
-	expected := 1
-	result := singleNumberNonOnlyEven([]int{2, 2, 1})
-	require.Equal(t, expected, result)
-}
+func Test_singleNumberNonOnlyEven(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    []int
+		expected int
+	}{
+		{"example1", []int{2, 2, 1}, 1},
+		{"example2", []int{4, 1, 2, 1, 2}, 4},
+		{"example3", []int{1}, 1},
+		{"example4", []int{2, 2, 1, 2}, 1},
+	}
 
-func Test_singleNumberNonOnlyEven_2(t *testing.T) {
-	expected := 4
-	result := singleNumberNonOnlyEven([]int{4, 1, 2, 1, 2})
-	require.Equal(t, expected, result)
-}
-
-func Test_singleNumberNonOnlyEven_3(t *testing.T) {
-	expected := 1
-	result := singleNumberNonOnlyEven([]int{1})
-	require.Equal(t, expected, result)
-}
-
-func Test_singleNumberNonOnlyEven_4(t *testing.T) {
-	expected := 1
-	result := singleNumberNonOnlyEven([]int{2, 2, 1, 2})
-	require.Equal(t, expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := singleNumberNonOnlyEven(tt.input)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }

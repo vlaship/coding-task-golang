@@ -6,20 +6,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_missingNumber_1(t *testing.T) {
-	expected := 2
-	result := missingNumber([]int{3, 0, 1})
-	require.Equal(t, expected, result)
-}
+func Test_missingNumber(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    []int
+		expected int
+	}{
+		{"example1", []int{3, 0, 1}, 2},
+		{"example2", []int{0, 1}, 2},
+		{"example3", []int{9, 6, 4, 2, 3, 5, 7, 0, 1}, 8},
+	}
 
-func Test_missingNumber_2(t *testing.T) {
-	expected := 2
-	result := missingNumber([]int{0, 1})
-	require.Equal(t, expected, result)
-}
-
-func Test_missingNumber_3(t *testing.T) {
-	expected := 8
-	result := missingNumber([]int{9, 6, 4, 2, 3, 5, 7, 0, 1})
-	require.Equal(t, expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := missingNumber(tt.input)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }

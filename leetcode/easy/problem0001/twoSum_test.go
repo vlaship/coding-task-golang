@@ -6,20 +6,22 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_twoSum_1(t *testing.T) {
-	expected := []int{0, 1}
-	result := twoSum([]int{2, 7, 11, 15}, 9)
-	require.Equal(t, expected, result)
-}
+func Test_twoSum(t *testing.T) {
+	tests := []struct {
+		name     string
+		nums     []int
+		target   int
+		expected []int
+	}{
+		{"example1", []int{2, 7, 11, 15}, 9, []int{0, 1}},
+		{"example2", []int{3, 2, 4}, 6, []int{1, 2}},
+		{"example3", []int{3, 3}, 6, []int{0, 1}},
+	}
 
-func Test_twoSum_2(t *testing.T) {
-	expected := []int{1, 2}
-	result := twoSum([]int{3, 2, 4}, 6)
-	require.Equal(t, expected, result)
-}
-
-func Test_twoSum_3(t *testing.T) {
-	expected := []int{0, 1}
-	result := twoSum([]int{3, 3}, 6)
-	require.Equal(t, expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := twoSum(tt.nums, tt.target)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }

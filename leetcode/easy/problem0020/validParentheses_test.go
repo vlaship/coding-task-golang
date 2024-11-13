@@ -6,32 +6,23 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_isValidParentheses_1(t *testing.T) {
-	expected := true
-	result := isValidParentheses("()")
-	require.Equal(t, expected, result)
-}
+func Test_isValidParentheses(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		expected bool
+	}{
+		{"example1", "()", true},
+		{"example2", "()[]{}", true},
+		{"example3", "(]", false},
+		{"example4", "){", false},
+		{"example5", "(){}}{", false},
+	}
 
-func Test_isValidParentheses_2(t *testing.T) {
-	expected := true
-	result := isValidParentheses("()[]{}")
-	require.Equal(t, expected, result)
-}
-
-func Test_isValidParentheses_3(t *testing.T) {
-	expected := false
-	result := isValidParentheses("(]")
-	require.Equal(t, expected, result)
-}
-
-func Test_isValidParentheses_4(t *testing.T) {
-	expected := false
-	result := isValidParentheses("){")
-	require.Equal(t, expected, result)
-}
-
-func Test_isValidParentheses_5(t *testing.T) {
-	expected := false
-	result := isValidParentheses("(){}}{")
-	require.Equal(t, expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := isValidParentheses(tt.input)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }
