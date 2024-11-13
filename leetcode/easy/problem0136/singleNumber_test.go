@@ -6,20 +6,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_singleNumber_1(t *testing.T) {
-	expected := 1
-	result := singleNumber([]int{2, 2, 1})
-	require.Equal(t, expected, result)
-}
+func Test_singleNumber(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    []int
+		expected int
+	}{
+		{"example1", []int{2, 2, 1}, 1},
+		{"example2", []int{4, 1, 2, 1, 2}, 4},
+		{"example3", []int{1}, 1},
+	}
 
-func Test_singleNumber_2(t *testing.T) {
-	expected := 4
-	result := singleNumber([]int{4, 1, 2, 1, 2})
-	require.Equal(t, expected, result)
-}
-
-func Test_singleNumber_3(t *testing.T) {
-	expected := 1
-	result := singleNumber([]int{1})
-	require.Equal(t, expected, result)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := singleNumber(tt.input)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }

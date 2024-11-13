@@ -7,7 +7,20 @@ import (
 )
 
 func Test_reverseString(t *testing.T) {
-	expected := "!dlroW olleH"
-	result := reverseString("Hello World!")
-	require.Equal(t, expected, result)
+	tests := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{"example1", "Hello World!", "!dlroW olleH"},
+		{"example2", "abcd", "dcba"},
+		{"example3", "A man, a plan, a canal, Panama", "amanaP ,lanac a ,nalp a ,nam A"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := reverseString(tt.input)
+			require.Equal(t, tt.expected, result)
+		})
+	}
 }
