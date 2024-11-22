@@ -24,3 +24,5 @@ go.work
 .fleet/
 .idea/
 main.go
+
+.idx/
