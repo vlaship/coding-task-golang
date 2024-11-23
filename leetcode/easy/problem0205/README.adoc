@@ -1,4 +1,4 @@
-# 205. Isomorphic Strings
+= 205. Isomorphic Strings
 
 https://leetcode.com/problems/isomorphic-strings/
 
@@ -8,25 +8,35 @@ Two strings `s` and `t` are isomorphic if the characters in `s` can be replaced 
 
 All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
 
-**Example 1:**\
-**Input:** s = "egg", t = "add"\
-**Output:** true\
-**Explanation:**\
-The strings `s` and `t` can be made identical by:\
-- Mapping `'e'` to `'a'`.\
-- Mapping `'g'` to `'d'`.
+.Example 1:
+[source]
+----
+Input: s = "egg", t = "add"
+Output: true
+----
+*Explanation:* +
+The strings `s` and `t` can be made identical by:
 
-**Example 2:**\
-**Input:** s = "foo", t = "bar"\
-**Output:** false\
-**Explanation:**\
+* Mapping `'e'` to `'a'`
+* Mapping `'g'` to `'d'`
+
+.Example 2:
+[source]
+----
+Input: s = "foo", t = "bar"
+Output: false
+----
+*Explanation:* +
 The strings `s` and `t` can not be made identical as `'o'` needs to be mapped to both `'a'` and `'r'`.
 
-**Example 3:**\
-**Input:** s = "paper", t = "title"\
-**Output:** true\
+.Example 3:
+[source]
+----
+Input: s = "paper", t = "title"
+Output: true
+----
 
-**Constraints:**
-- `1 <= s.length <= 5 * 10<sup>4</sup>`
-- `t.length == s.length`
-- `s` and `t` consist of any valid ascii character.
+.Constraints:
+* `1 <= s.length <= 5 * 10^4`
+* `t.length == s.length`
+* `s` and `t` consist of any valid ascii character. 

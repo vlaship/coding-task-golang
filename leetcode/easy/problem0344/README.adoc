@@ -1,0 +1,25 @@
+= 344. Reverse String
+
+https://leetcode.com/problems/reverse-string/
+
+Write a function that reverses a string. The input string is given as an array of characters `s`.
+
+You must do this by modifying the input array link:https://en.wikipedia.org/wiki/In-place_algorithm[in-place] with `O(1)` extra memory.
+
+.Example 1:
+[source]
+----
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+----
+
+.Example 2:
+[source]
+----
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+----
+
+.Constraints:
+* `1 <= s.length <= 10^5`
+* `s[i]` is a link:https://en.wikipedia.org/wiki/ASCII#Printable_characters[printable ascii character]. 

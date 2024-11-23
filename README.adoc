@@ -1,0 +1,20 @@
+= Project Title
+:toc:
+:toc-placement!:
+
+toc::[]
+
+== Introduction
+// Convert markdown content to asciidoc syntax:
+// # -> =
+// ## -> ==
+// ### -> ===
+// **bold** -> *bold*
+// `code` -> `code`
+// ```language -> [source,language]
+// ----
+// code block
+// ----
+// [link text](url) -> link:url[link text]
+// ![alt](image.png) -> image::image.png[alt]
+
