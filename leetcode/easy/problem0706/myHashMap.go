@@ -16,16 +16,16 @@ func Constructor() MyHashMap {
 	}
 }
 
-func (this *MyHashMap) hash(key int) int {
-	return key % len(this.buckets)
+func (m *MyHashMap) hash(key int) int {
+	return key % len(m.buckets)
 }
 
-func (this *MyHashMap) Put(key int, value int) {
-	h := this.hash(key)
-	b := this.buckets[h]
+func (m *MyHashMap) Put(key int, value int) {
+	h := m.hash(key)
+	b := m.buckets[h]
 
 	if b == nil {
-		this.buckets[h] = &Node{key: key, value: value}
+		m.buckets[h] = &Node{key: key, value: value}
 		return
 	}
 
@@ -42,9 +42,9 @@ func (this *MyHashMap) Put(key int, value int) {
 	}
 }
 
-func (this *MyHashMap) Get(key int) int {
-	h := this.hash(key)
-	b := this.buckets[h]
+func (m *MyHashMap) Get(key int) int {
+	h := m.hash(key)
+	b := m.buckets[h]
 
 	for b != nil {
 		if b.key == key {
@@ -56,16 +56,16 @@ func (this *MyHashMap) Get(key int) int {
 	return -1
 }
 
-func (this *MyHashMap) Remove(key int) {
-	h := this.hash(key)
-	b := this.buckets[h]
+func (m *MyHashMap) Remove(key int) {
+	h := m.hash(key)
+	b := m.buckets[h]
 
 	if b == nil {
 		return
 	}
 
 	if b.key == key {
-		this.buckets[h] = b.next
+		m.buckets[h] = b.next
 		return
 	}
 
