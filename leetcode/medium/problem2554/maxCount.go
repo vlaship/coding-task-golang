@@ -1,14 +1,16 @@
 package problem2554
 
 func maxCount(banned []int, n int, maxSum int) int {
-	set := make(map[int]struct{})
+	b := make([]bool, n+1)
 	for _, v := range banned {
-		set[v] = struct{}{}
+		if v <= n {
+			b[v] = true
+		}
 	}
 
 	sum, count := 0, 0
 	for i := 1; i <= n; i++ {
-		if _, ok := set[i]; ok {
+		if b[i] {
 			continue
 		}
 		if sum+i > maxSum {
