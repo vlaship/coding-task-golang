@@ -6,8 +6,7 @@ func maxCount(banned []int, n int, maxSum int) int {
 		set[v] = struct{}{}
 	}
 
-	sum := 0
-	count := 0
+	sum, count := 0, 0
 	for i := 1; i <= n; i++ {
 		if _, ok := set[i]; ok {
 			continue
