@@ -1,4 +1,4 @@
-package problem0001
+package problem_0001
 
 func problem001(input []int) []int {
 	var sorted = make([]int, len(input))
